@@ -7,6 +7,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'feature/search/data/repo/search_repo_impl.dart';
+import 'feature/search/presentation/view_model/cubits/search_cubit.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -17,7 +20,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: BooklyApp(),
     );
   }
@@ -29,17 +33,18 @@ class BooklyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [
+           providers: [
         BlocProvider(
             create: (context) =>
                 FeaturedBooksCubit(HomeRepoImpl())..fetchFeaturedBooks()),
         BlocProvider(
             create: (context) =>
-                NewsetBooksCubit(HomeRepoImpl())..fetchNewsetBooks())
+                NewsetBooksCubit(HomeRepoImpl())..fetchNewsetBooks()),
+        BlocProvider(
+            create: (context) => SearchCubit(SearchRepoImpl()..searchBooks))
       ],
       child: MaterialApp.router(
         routerConfig: AppRouter.router,
-        debugShowCheckedModeBanner: false,
         theme: ThemeData.dark().copyWith(
             scaffoldBackgroundColor: kPrimaryColor,
             textTheme:

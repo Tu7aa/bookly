@@ -32,7 +32,7 @@ class NewsetBooksListView extends StatelessWidget {
         } else if (state is NewsetBooksFailure) {
           return CustomError(errMessage: state.errMessage);
         } else {
-          return const ShimmerContainerEffect();
+          return const SizedBox();
         }
       },
     );

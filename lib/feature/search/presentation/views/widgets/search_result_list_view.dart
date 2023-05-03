@@ -1,4 +1,4 @@
-import 'package:bookly/core/utils/shimmer/cutom_loading_search.dart';
+  import 'package:bookly/core/utils/shimmer/cutom_loading_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -6,7 +6,7 @@ import 'package:go_router/go_router.dart';
 import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/utils/widgets/custom_error.dart';
 import '../../../../home/presentation/views/widgets/best_saller_list_view_item.dart';
-import '../../../view_model/cubits/search_cubit.dart';
+import '../../view_model/cubits/search_cubit.dart';
 
 
 class SearchResultListView extends StatelessWidget {
@@ -35,7 +35,7 @@ class SearchResultListView extends StatelessWidget {
       if (state is SearchFailure) {
         return CustomError(errMessage: state.errMessage);
       } else {
-        return const ShimmerSearch();
+        return const SizedBox();
       }
     });
   }

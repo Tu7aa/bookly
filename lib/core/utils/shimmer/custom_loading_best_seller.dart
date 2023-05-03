@@ -7,9 +7,9 @@ class ShimmerListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 172,
+      height: 50,
       child: ListView.builder(
-        scrollDirection: Axis.horizontal,
+        scrollDirection: Axis.vertical,
         itemCount: 5,
         itemBuilder: (BuildContext context, int index) {
           return Shimmer.fromColors(
@@ -21,8 +21,8 @@ class ShimmerListView extends StatelessWidget {
                 color: Colors.grey[300],
               ),
               margin: const EdgeInsets.all(10.0),
-              width: 100.0,
-              height: 20.0,
+              width: 20.0,
+              height: 50.0,
             ),
           );
         },

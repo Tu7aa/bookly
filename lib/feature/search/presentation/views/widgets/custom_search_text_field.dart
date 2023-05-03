@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../../../view_model/cubits/search_cubit.dart';
+import '../../view_model/cubits/search_cubit.dart';
+
 
 class CustomSearchTextField extends StatelessWidget {
   const CustomSearchTextField({Key? key}) : super(key: key);
